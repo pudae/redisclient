@@ -48,9 +48,14 @@ LINK_DIRECTORIES(
 )
 
 ADD_EXECUTABLE(parsertest tests/parsertest.cpp ${SOURCES} ${HEADERS})
+ADD_EXECUTABLE(mttest tests/mttest.cpp ${SOURCES} ${HEADERS})
 ADD_LIBRARY(redisclient STATIC ${HEADERS} ${SOURCES})
 
 TARGET_LINK_LIBRARIES(parsertest
+    ${Boost_LIBRARIES}
+)
+
+TARGET_LINK_LIBRARIES(mttest
     ${Boost_LIBRARIES}
 )
 
